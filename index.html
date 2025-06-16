@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prabhu M | Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Add EmailJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS with your public key
+      (function () {
+        emailjs.init("w2QaPskRL4KJ25nBd"); // Your EmailJS public key
+      })();
+    </script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              fadeIn: "fadeIn 1s ease-in forwards",
+              float: "float 6s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": {
+                  opacity: 0,
+                  transform: "translateY(20px)",
+                },
+                "100%": {
+                  opacity: 1,
+                  transform: "translateY(0)",
+                },
+              },
+              float: {
+                "0%, 100%": {
+                  transform: "translateY(0)",
+                },
+                "50%": {
+                  transform: "translateY(-20px)",
+                },
+              },
+            },
+            colors: {
+              primary: {
+                light: "#6366f1",
+                dark: "#4f46e5",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .section-title {
+          @apply text-3xl md:text-4xl font-bold mb-12 relative inline-block;
+        }
+        .section-title:after {
+          @apply content-[''] absolute bottom-[-8px] left-0 w-1/2 h-1 bg-primary-light dark:bg-primary-dark rounded-full;
+        }
+        .card-hover {
+          @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-2;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans antialiased"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="text-2xl font-bold text-primary-light dark:text-primary-dark"
+          >Prabhu<span class="text-gray-800 dark:text-white">M</span></a
+        >
+
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#home"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Contact</a
+          >
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+          </button>
+          <a
+            href="/Prabhu_Mm.pdf"
+            download="My_Resume.pdf"
+            class="bg-primary-light dark:bg-primary-dark text-white px-6 py-2 rounded-full hover:bg-primary-dark dark:hover:bg-primary-light transition font-medium text-center"
+          >
+            Resume
+          </a>
+
+          <button id="mobile-menu-button" class="md:hidden p-2">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-gray-900 px-6 py-4 border-t border-gray-200 dark:border-gray-800"
+      >
+        <div class="flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            class="font-medium hover:text-primary-light dark:hover:text-primary-dark transition"
+            >Contact</a
+          >
+          <a
+            href="#"
+            class="bg-primary-light dark:bg-primary-dark text-white px-6 py-2 rounded-full hover:bg-primary-dark dark:hover:bg-primary-light transition font-medium text-center"
+            >Resume</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+      <div
+        class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="animate-fadeIn">
+          <p class="text-primary-light dark:text-primary-dark font-medium mb-4">
+            Hello, I'm
+          </p>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">Prabhu M</h1>
+          <h2
+            class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600 dark:text-gray-400"
+          >
+            Web developer & UI/UX Designer
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
+            I build exceptional digital experiences with modern technologies.
+            Focused on creating scalable, performant, and user-friendly
+            applications.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              class="bg-primary-light dark:bg-primary-dark text-white px-8 py-3 rounded-full hover:bg-primary-dark dark:hover:bg-primary-light transition font-medium"
+              >Get In Touch</a
+            >
+            <a
+              href="#projects"
+              class="border border-gray-300 dark:border-gray-700 px-8 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition font-medium"
+              >View Projects</a
+            >
+          </div>
+        </div>
+        <div class="hidden md:flex justify-center animate-float">
+          <div class="relative w-80 h-80">
+            <div
+              class="absolute inset-0 bg-primary-light dark:bg-primary-dark rounded-full opacity-20 blur-xl"
+            ></div>
+            <img
+              src="/profile.png"
+              alt="Profile"
+              class="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="grid md:grid-cols-3 gap-12">
+          <div class="md:col-span-2">
+            <p class="text-lg mb-6">
+              A passionate developer with a strong foundation in computer
+              science and hands-on experience in building modern, responsive web
+              applications. Focused on creating efficient, scalable, and
+              user-friendly solutions using both frontend and backend
+              technologies.
+            </p>
+            <p class="text-lg mb-6">
+              Enjoys combining design and development, crafting interfaces that
+              are not only functional but also visually appealing and intuitive.
+              The goal is to build meaningful digital experiences that solve
+              real-world problems.
+            </p>
+            <p class="text-lg mb-8">
+              Always exploring new technologies, working on personal projects,
+              and sharing knowledge with the tech community. Committed to
+              continuous learning, clean code, and building with impact.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 max-w-md">
+              <div class="flex items-center space-x-2">
+                <i
+                  class="fas fa-map-marker-alt text-primary-light dark:text-primary-dark"
+                ></i>
+                <span>Chennai, India</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i
+                  class="fas fa-envelope text-primary-light dark:text-primary-dark"
+                ></i>
+                <span>m.prabhu8428@gmail.com</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i
+                  class="fas fa-graduation-cap text-primary-light dark:text-primary-dark"
+                ></i>
+                <span>B.E. Computer Science</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i
+                  class="fas fa-briefcase text-primary-light dark:text-primary-dark"
+                ></i>
+                <span>Fresher</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div
+              class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md w-full card-hover"
+            >
+              <h3 class="text-xl font-semibold mb-4">My Expertise</h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span>Frontend Development</span>
+                    <span>70%</span>
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+                  >
+                    <div
+                      class="bg-primary-light dark:bg-primary-dark h-2 rounded-full"
+                      style="width: 70%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span>Backend Development</span>
+                    <span>40%</span>
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+                  >
+                    <div
+                      class="bg-primary-light dark:bg-primary-dark h-2 rounded-full"
+                      style="width: 40%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span>UI/UX Design</span>
+                    <span>80%</span>
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+                  >
+                    <div
+                      class="bg-primary-light dark:bg-primary-dark h-2 rounded-full"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span>Cloud & DevOps</span>
+                    <span>10%</span>
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2"
+                  >
+                    <div
+                      class="bg-primary-light dark:bg-primary-dark h-2 rounded-full"
+                      style="width: 10%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Education</h2>
+
+        <div class="space-y-8 relative">
+          <!-- Timeline line -->
+          <div
+            class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700 transform -translate-x-1/2"
+          ></div>
+
+          <!-- Experience 1 -->
+          <div class="relative md:grid md:grid-cols-2 gap-8">
+            <div class="md:text-right md:pr-8 pb-8 md:pb-0">
+              <h3 class="text-xl font-semibold">S.A. Engineering college</h3>
+              <p class="text-primary-light dark:text-primary-dark">BE CSE.</p>
+              <p class="text-gray-500 dark:text-gray-400">2021 - 2025</p>
+            </div>
+            <div class="hidden md:flex items-center justify-center">
+              <div
+                class="w-4 h-4 rounded-full bg-primary-light dark:bg-primary-dark border-4 border-white dark:border-gray-900 z-10"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="relative md:grid md:grid-cols-2 gap-8">
+            <div class="hidden md:flex items-center justify-center">
+              <div
+                class="w-4 h-4 rounded-full bg-primary-light dark:bg-primary-dark border-4 border-white dark:border-gray-900 z-10"
+              ></div>
+            </div>
+            <div class="md:pl-8">
+              <h3 class="text-xl font-semibold">
+                Little Holy Angels Matriculation Higher Secondary School
+              </h3>
+              <p class="text-primary-light dark:text-primary-dark">
+                Higher Secondary Certificate.
+              </p>
+              <p class="text-gray-500 dark:text-gray-400">2020 - 2021</p>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="relative md:grid md:grid-cols-2 gap-8">
+            <div class="md:text-right md:pr-8 pb-8 md:pb-0">
+              <h3 class="text-xl font-semibold">
+                Little Holy Angels Matriculation Higher Secondary School
+              </h3>
+              <p class="text-primary-light dark:text-primary-dark">
+                Secondary School Leaving Certificate
+              </p>
+              <p class="text-gray-500 dark:text-gray-400">2018 - 2019</p>
+            </div>
+            <div class="hidden md:flex items-center justify-center">
+              <div
+                class="w-4 h-4 rounded-full bg-primary-light dark:bg-primary-dark border-4 border-white dark:border-gray-900 z-10"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-project-diagram text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                Multimodal Recognition System
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Combines face, hand, and iris recognition for real-time
+                biometrics and gesture control.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >OpenCV</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Flask</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-chart-line text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                Insurance Cost Predictor
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Predicts health insurance costs based on user data using ML
+                regression models.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Scikit-learn</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Pandas</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-boxes text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                Transport Pricing System
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Real-time courier pricing calculator with WhatsApp support and
+                dynamic estimates.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Firebase</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-id-card text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">RFID Facial Attendance</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Combines RFID and ESP32 camera to automate attendance with
+                real-time updates.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >IoT</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Google Sheets</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-school text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                School Website (Full-stack)
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Full-stack website with admin panel, image CMS, contact forms,
+                and separate Kinder page.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Node.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Strapi</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-wifi text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                Evil Twin WiFi Deauther
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Ethical hacking tool built using ESP8266 to demonstrate network
+                vulnerabilities.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >ESP8266</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Arduino</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-leaf text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Smart Plant Monitoring</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                IoT project to monitor soil moisture, temperature, and alert for
+                watering.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >IoT</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Sensors</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >Arduino</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md card-hover"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary-light to-primary-dark flex items-center justify-center"
+            >
+              <i class="fas fa-tasks text-white text-6xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">ToDo List App</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Simple task manager to add, delete, and mark completed tasks
+                with local storage.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm"
+                  >CSS</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >View Demo</a
+                >
+                <a
+                  href="#"
+                  class="text-primary-light dark:text-primary-dark hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-full font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+          >
+            View All Projects
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Frontend Skills -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md card-hover"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark mr-4"
+              >
+                <i class="fas fa-laptop-code text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Frontend</h3>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-html5 text-orange-500"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-css3-alt text-blue-400"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-js text-yellow-500"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-wind text-cyan-500"></i>
+                <span>Tailwind</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-react text-blue-500"></i>
+                <span>React</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md card-hover"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark mr-4"
+              >
+                <i class="fas fa-server text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Backend</h3>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-node-js text-green-600"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-python text-blue-600"></i>
+                <span>Python</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-leaf text-green-400"></i>
+                <span>MongoDB</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-fire text-orange-500"></i>
+                <span>Firebase</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Other Skills -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md card-hover"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark mr-4"
+              >
+                <i class="fas fa-tools text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold">Tools & Others</h3>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-git-alt text-orange-600"></i>
+                <span>Git</span>
+              </div>
+
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-aws text-orange-400"></i>
+                <span>AWS</span>
+              </div>
+
+              <div class="flex items-center space-x-2">
+                <i class="fab fa-figma text-purple-500"></i>
+                <span>Figma</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-mobile-alt text-blue-500"></i>
+                <span>Responsive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title">Get In Touch</h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <p class="text-lg mb-8">
+              I'm currently open to new opportunities, interesting projects, or
+              just chatting about technology. Feel free to reach out!
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="p-3 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark"
+                >
+                  <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Email</h3>
+                  <a
+                    href="mailto:m.prabhu8428@gmail.com"
+                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition"
+                    >m.prabhu8428@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="p-3 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark"
+                >
+                  <i class="fas fa-map-marker-alt text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Location</h3>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    Chennai, Tamil Nadu, India
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex space-x-4">
+              <a
+                href="https://www.linkedin.com/in/prabhu-m-520123276/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary-light dark:hover:bg-primary-dark hover:text-white transition"
+              >
+                <i class="fab fa-linkedin-in text-lg"></i>
+              </a>
+              <a
+                href="https://github.com/meow219"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary-light dark:hover:bg-primary-dark hover:text-white transition"
+              >
+                <i class="fab fa-github text-lg"></i>
+              </a>
+              <a
+                href="https://www.credly.com/users/prabhu-m.af5db1b4"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-primary-light dark:hover:bg-primary-dark hover:text-white transition"
+              >
+                <i class="fas fa-award text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <form id="contact-form" class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block mb-1 font-medium">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="from_name"
+                    required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block mb-1 font-medium"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="from_email"
+                    required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="subject" class="block mb-1 font-medium"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                />
+              </div>
+              <div>
+                <label for="message" class="block mb-1 font-medium"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full bg-primary-light dark:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark dark:hover:bg-primary-light transition"
+              >
+                Send Message
+              </button>
+              <div id="form-message" class="hidden mt-4 p-4 rounded-lg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <a
+          href="#"
+          class="text-2xl font-bold text-primary-light dark:text-primary-dark"
+          >Prabhu<span class="text-gray-800 dark:text-white">M</span></a
+        >
+        <p class="mt-4 text-gray-600 dark:text-gray-400">
+          Crafting digital experiences with passion and precision.
+        </p>
+        <div class="mt-6 flex justify-center space-x-6">
+          <a
+            href="https://www.linkedin.com/in/prabhu-m-520123276/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://github.com/meow219"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.credly.com/users/prabhu-m.af5db1b4"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition"
+          >
+            <i class="fas fa-award text-lg"></i>
+          </a>
+        </div>
+        <p class="mt-8 text-sm text-gray-500 dark:text-gray-400">
+          &copy; 2025 Prabhu M. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 p-3 bg-primary-light dark:bg-primary-dark text-white rounded-full shadow-lg hover:bg-primary-dark dark:hover:bg-primary-light transition hidden"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Dark mode toggle
+      const themeToggle = document.getElementById("theme-toggle");
+
+      themeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
+      });
+
+      // Check for saved theme preference
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      // Back to top button
+      const backToTopButton = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("hidden");
+        } else {
+          backToTopButton.classList.add("hidden");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // EmailJS form submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const submitBtn = document.getElementById("submit-btn");
+          const formMessage = document.getElementById("form-message");
+
+          // Change button text and disable it
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = "Sending...";
+
+          // Hide any previous messages
+          formMessage.classList.add("hidden");
+
+          emailjs
+            .sendForm("service_hptkabt", "template_e186b4h", this)
+            .then(
+              function () {
+                // Success message
+                formMessage.textContent = "Message sent successfully!";
+                formMessage.classList.remove(
+                  "hidden",
+                  "bg-red-100",
+                  "text-red-700"
+                );
+                formMessage.classList.add("bg-green-100", "text-green-700");
+
+                // Reset form
+                document.getElementById("contact-form").reset();
+              },
+              function (error) {
+                // Error message
+                formMessage.textContent =
+                  "Failed to send message. Please try again later.";
+                formMessage.classList.remove(
+                  "hidden",
+                  "bg-green-100",
+                  "text-green-700"
+                );
+                formMessage.classList.add("bg-red-100", "text-red-700");
+                console.error("EmailJS Error:", error);
+              }
+            )
+            .finally(function () {
+              // Reset button state
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Send Message";
+            });
+        });
+    </script>
+  </body>
+</html>
